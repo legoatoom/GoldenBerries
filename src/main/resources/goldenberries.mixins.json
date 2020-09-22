@@ -4,6 +4,7 @@
   "package": "com.github.legoatoom.goldenberries.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "entity.effect.StatusEffectMixin"
   ],
   "client": [
   ],
