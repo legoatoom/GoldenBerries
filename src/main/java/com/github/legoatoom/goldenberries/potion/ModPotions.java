@@ -6,7 +6,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.util.registry.Registry;
 
 public class ModPotions {
-    public static Potion ALEXITERIC;
+    public static final Potion ALEXITERIC;
     public static Potion LONG_ALEXITERIC;
     public static Potion STRONG_ALEXITERIC;
 
@@ -14,8 +14,7 @@ public class ModPotions {
         return Registry.register(Registry.POTION, name, potion);
     }
 
-
-    public static void registerPotions(){
+    static {
         ALEXITERIC = register("alexiteric", new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 3600)));
     }
 }

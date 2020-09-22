@@ -12,8 +12,5 @@ public class GoldenBerries implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ModStatusEffects.registerStatusEffects();
-        ModPotions.registerPotions();
-        ModItems.registerItems();
     }
 }

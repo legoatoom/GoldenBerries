@@ -9,7 +9,7 @@ import net.minecraft.util.registry.Registry;
 
 public class ModItems {
 
-    public static Item GOLDEN_BERRIES;
+    public static final Item GOLDEN_BERRIES;
 
     private static Item register(String id, Item item){
         return register(new Identifier(GoldenBerries.MOD_ID,id), item);
@@ -19,7 +19,7 @@ public class ModItems {
         return Registry.register(Registry.ITEM, id, item);
     }
 
-    public static void registerItems() {
+    static {
         GOLDEN_BERRIES = register("golden_berries", new Item((new Item.Settings()).group(ItemGroup.BREWING).food(FoodComponents.GOLDEN_CARROT)));
     }
 }
