@@ -8,13 +8,13 @@ import net.minecraft.util.registry.Registry;
 public class ModPotions {
     public static final Potion ALEXITERIC;
     public static Potion LONG_ALEXITERIC;
-    public static Potion STRONG_ALEXITERIC;
 
     private static Potion register(String name, Potion potion) {
         return Registry.register(Registry.POTION, name, potion);
     }
 
     static {
-        ALEXITERIC = register("alexiteric", new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 3600)));
+        ALEXITERIC = register("alexiteric", new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 900)));
+        LONG_ALEXITERIC = register("long_alexiteric", new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 1800)));
     }
 }

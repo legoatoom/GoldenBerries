@@ -12,6 +12,6 @@ public class PoisonResistanceStatusEffect extends StatusEffect {
     }
 
     public PoisonResistanceStatusEffect(){
-        super(StatusEffectType.BENEFICIAL, 0xa3134c);
+        super(StatusEffectType.BENEFICIAL, 0x0FD2FC);
     }
 }

@@ -1,2 +1,0 @@
-- Add correct food values to the item Golden Berries
-- Add potions for the brewing.
