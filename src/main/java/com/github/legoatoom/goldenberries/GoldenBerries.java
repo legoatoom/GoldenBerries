@@ -1,8 +1,5 @@
 package com.github.legoatoom.goldenberries;
 
-import com.github.legoatoom.goldenberries.entity.effect.ModStatusEffects;
-import com.github.legoatoom.goldenberries.items.ModItems;
-import com.github.legoatoom.goldenberries.potion.ModPotions;
 import net.fabricmc.api.ModInitializer;
 
 public class GoldenBerries implements ModInitializer {
@@ -11,5 +8,7 @@ public class GoldenBerries implements ModInitializer {
 
 
     @Override
-    public void onInitialize() {}
+    public void onInitialize() {
+
+    }
 }

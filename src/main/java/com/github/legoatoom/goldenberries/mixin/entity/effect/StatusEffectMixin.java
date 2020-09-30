@@ -21,12 +21,11 @@ public class StatusEffectMixin {
             ))
     private void applyUpdateEffect(LivingEntity entity, int amplifier, CallbackInfo ci) {
         if (entity.hasStatusEffect(ModStatusEffects.POISON_RESISTANCE)){
-            if(entity.hasStatusEffect(StatusEffects.POISON)){
-                ci.cancel();
-            } else if (entity.hasStatusEffect(StatusEffects.WITHER)) {
+            if (entity.hasStatusEffect(StatusEffects.WITHER)) {
                 if (entity.getHealth() <= 4.0F){ ci.cancel();}
+            } else if (entity.hasStatusEffect(StatusEffects.POISON)){
+                ci.cancel();
             }
         }
-
     }
 }

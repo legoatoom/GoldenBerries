@@ -1,12 +1,12 @@
 package com.github.legoatoom.goldenberries.items;
 
 import com.github.legoatoom.goldenberries.GoldenBerries;
-import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+@SuppressWarnings("SameParameterValue")
 public class ModItems {
 
     public static final Item GOLDEN_BERRIES;

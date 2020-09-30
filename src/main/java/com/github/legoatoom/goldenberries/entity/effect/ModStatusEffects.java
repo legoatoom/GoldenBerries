@@ -5,7 +5,9 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+@SuppressWarnings("SameParameterValue")
 public class ModStatusEffects {
+
     public static final StatusEffect POISON_RESISTANCE;
 
     private static StatusEffect register(String id, StatusEffect entry){
