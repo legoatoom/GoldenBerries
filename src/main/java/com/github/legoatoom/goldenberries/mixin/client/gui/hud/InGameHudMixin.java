@@ -1,3 +1,20 @@
+/*
+ * Copyright (C) 2020 legoatoom
+ *
+ *     This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package com.github.legoatoom.goldenberries.mixin.client.gui.hud;
 
 import com.github.legoatoom.goldenberries.GoldenBerries;
@@ -15,6 +32,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+/**
+ * Mixin class for the {@link InGameHud} that creates the blue hearts when the user has the potion effect on.
+ * This class switches what texture the renderer should use to render the hearts.
+ * Because I can't directly locate where the code should begin and stop I had to use two injects to find a start and
+ * endpoint to turn off the texture and replace the original texture.
+ *
+ * @author legoatoom
+ */
 @Mixin(InGameHud.class)
 public abstract class InGameHudMixin {
 
