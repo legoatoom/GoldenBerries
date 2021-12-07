@@ -21,10 +21,14 @@ import com.github.legoatoom.goldenberries.entity.effect.ModStatusEffects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.text.Text;
+import net.minecraft.util.registry.Registry;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 /**
  * The mixin for the {@link StatusEffect} class.
@@ -34,7 +38,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * @author legoatoom
  */
 @Mixin(StatusEffect.class)
-public class StatusEffectMixin {
+public abstract class StatusEffectMixin {
 
     @Inject(
             method = "applyUpdateEffect(Lnet/minecraft/entity/LivingEntity;I)V",
@@ -42,14 +46,13 @@ public class StatusEffectMixin {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/entity/LivingEntity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
-            ))
+            )
+    )
     private void applyUpdateEffect(LivingEntity entity, int amplifier, CallbackInfo ci) {
         if (entity.hasStatusEffect(ModStatusEffects.POISON_RESISTANCE)){
-            if (entity.hasStatusEffect(StatusEffects.WITHER)) {
-                if (entity.getHealth() <= 4.0F){ ci.cancel();}
-            } else if (entity.hasStatusEffect(StatusEffects.POISON)){
-                ci.cancel();
-            }
+            // Apparently this works.
+            if ((Object)this == StatusEffects.WITHER) ci.cancel();
+            if ((Object)this == StatusEffects.POISON) ci.cancel();
         }
     }
 }
