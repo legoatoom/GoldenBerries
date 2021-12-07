@@ -37,7 +37,7 @@ public class ModPotions {
     }
 
     static {
-        ALEXITERIC = register("alexiteric", new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 900)));
-        LONG_ALEXITERIC = register("long_alexiteric", new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 1800)));
+        ALEXITERIC = register("alexiteric", new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 3600)));
+        LONG_ALEXITERIC = register("long_alexiteric", new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 9600)));
     }
 }

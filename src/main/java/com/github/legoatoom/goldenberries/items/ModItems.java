@@ -43,6 +43,6 @@ public class ModItems {
     }
 
     static {
-        GOLDEN_BERRIES = register("golden_berries", new Item((new Item.Settings()).group(ItemGroup.BREWING).food(ModFoodComponents.GOLDEN_BERRIES)));
+        GOLDEN_BERRIES = register(GoldenBerries.MOD_ID, new Item((new Item.Settings()).group(ItemGroup.BREWING).food(ModFoodComponents.GOLDEN_BERRIES)));
     }
 }
