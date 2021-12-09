@@ -15,30 +15,34 @@
  * along with GoldenBerries.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.legoatoom.goldenberries.entity.effect;
+package com.github.legoatoom.goldenberries.blocks;
 
 import com.github.legoatoom.goldenberries.GoldenBerries;
-import net.minecraft.entity.effect.StatusEffect;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.block.SweetBerryBushBlock;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 /**
- * ModStatusEffects is the Modded version of the {@link net.minecraft.entity.effect.StatusEffects} class.
+ * The modded version of the {@link net.minecraft.block.Blocks} class containing all the blocks added by this mod.
  *
- * Containing all the status effects this mod has.
  * @author legoatoom
  */
 @SuppressWarnings("SameParameterValue")
-public class ModStatusEffects {
+public class ModBlocks {
 
-    public static final StatusEffect POISON_RESISTANCE;
+    public static final Block GOLDEN_BERRY_BUSH;
 
-    private static StatusEffect register(String id, StatusEffect entry){
-        return Registry.register(Registry.STATUS_EFFECT, new Identifier(GoldenBerries.MOD_ID, id), entry);
+    static{
+        GOLDEN_BERRY_BUSH = register("golden_berry_bush", new GoldenBerryBushBlock(FabricBlockSettings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
     }
 
-    static {
-        POISON_RESISTANCE = register("poison_resistance", new PoisonResistanceStatusEffect());
+    private static Block register(String id, Block block) {
+        return Registry.register(Registry.BLOCK, new Identifier(GoldenBerries.MOD_ID, id), block);
     }
 
     public static void init(){}

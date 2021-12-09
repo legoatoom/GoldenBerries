@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Time is following the [Holocene Calendar](https://en.wikipedia.org/wiki/Holocene_calendar).
 
+
+## [1.2.0] - 12021-12-09
+### Added
+- Golden Berry Bush
+
+### Changed
+- Duration of potion increased
+- Makes entities immune to wither completely
+
 ## [1.0.1] - 12020-10-06
 ### Added
 - This changelog was added.

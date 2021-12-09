@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.github.legoatoom.goldenberries.GoldenBerries"
+    ],
+    "client": [
+      "com.github.legoatoom.goldenberries.client.ClientInitializer"
     ]
   },
   "mixins": [

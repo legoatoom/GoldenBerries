@@ -18,8 +18,10 @@
 package com.github.legoatoom.goldenberries.items;
 
 import com.github.legoatoom.goldenberries.GoldenBerries;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import com.github.legoatoom.goldenberries.blocks.ModBlocks;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -39,10 +41,15 @@ public class ModItems {
     }
 
     private static Item register(Identifier id, Item item){
+        if (item instanceof BlockItem){
+            ((BlockItem) item).appendBlocks(Item.BLOCK_ITEMS, item);
+        }
         return Registry.register(Registry.ITEM, id, item);
     }
 
     static {
-        GOLDEN_BERRIES = register(GoldenBerries.MOD_ID, new Item((new Item.Settings()).group(ItemGroup.BREWING).food(ModFoodComponents.GOLDEN_BERRIES)));
+        GOLDEN_BERRIES = register("golden_berries", new AliasedBlockItem(ModBlocks.GOLDEN_BERRY_BUSH, new FabricItemSettings().food(ModFoodComponents.GOLDEN_BERRIES).group(ItemGroup.BREWING)));
     }
+
+    public static void init(){}
 }

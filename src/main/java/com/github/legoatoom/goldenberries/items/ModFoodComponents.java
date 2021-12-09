@@ -30,4 +30,6 @@ public class ModFoodComponents {
     static{
         GOLDEN_BERRIES = (new FoodComponent.Builder()).hunger(3).saturationModifier(0.6F).build();
     }
+
+    public static void init(){}
 }
