@@ -28,7 +28,7 @@
   "mixins": [
     "goldenberries.mixins.json"
   ],
-
+  "accessWidener": "goldenberries.accesswidener",
   "depends": {
     "fabricloader": ">=0.12.8",
     "fabric": "*",
