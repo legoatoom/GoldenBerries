@@ -26,6 +26,6 @@ jobs:
         uses: Kir-Antipov/mc-publish@v1.1
         with:
           # A valid token for the GitHub API
-          github-token: ${{ secret.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           java: 17
           changelog-file: changelog.md
