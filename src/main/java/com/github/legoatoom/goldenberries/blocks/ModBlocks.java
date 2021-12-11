@@ -19,10 +19,7 @@ package com.github.legoatoom.goldenberries.blocks;
 
 import com.github.legoatoom.goldenberries.GoldenBerries;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.block.SweetBerryBushBlock;
+import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -35,15 +32,13 @@ import net.minecraft.util.registry.Registry;
 @SuppressWarnings("SameParameterValue")
 public class ModBlocks {
 
-    public static final Block GOLDEN_BERRY_BUSH;
-
-    static{
-        GOLDEN_BERRY_BUSH = register("golden_berry_bush", new GoldenBerryBushBlock(FabricBlockSettings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
-    }
+    public static Block GOLDEN_BERRY_BUSH;
 
     private static Block register(String id, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier(GoldenBerries.MOD_ID, id), block);
     }
 
-    public static void init(){}
+    public static void init(){
+        GOLDEN_BERRY_BUSH = register("golden_berry_bush", new GoldenBerryBushBlock(FabricBlockSettings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+    }
 }

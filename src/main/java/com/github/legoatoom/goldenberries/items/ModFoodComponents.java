@@ -25,11 +25,9 @@ import net.minecraft.item.FoodComponent;
  * @author legoatoom
  */
 public class ModFoodComponents {
-    public static final FoodComponent GOLDEN_BERRIES;
+    public static FoodComponent GOLDEN_BERRIES;
 
-    static{
+    public static void init(){
         GOLDEN_BERRIES = (new FoodComponent.Builder()).hunger(3).saturationModifier(0.6F).build();
     }
-
-    public static void init(){}
 }

@@ -23,6 +23,7 @@ import com.github.legoatoom.goldenberries.items.ModFoodComponents;
 import com.github.legoatoom.goldenberries.items.ModItems;
 import com.github.legoatoom.goldenberries.potion.ModPotions;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.registry.Registry;
 
 /**
  * <h3>GoldenBerries implements {@link ModInitializer}</h3>

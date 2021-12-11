@@ -6,10 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Time is following the [Holocene Calendar](https://en.wikipedia.org/wiki/Holocene_calendar).
 
+## [1.2.1] - 12021-12-11
+### Fixed
+- Loading Bug causing crashes.
+- Piglins not loving _Golden Berries_
 
 ## [1.2.0] - 12021-12-09
 ### Added
-- Golden Berry Bush
+- _Golden Berry Bush_, very simmilar to _Sweet Berry Bush_
 
 ### Changed
 - Duration of potion increased

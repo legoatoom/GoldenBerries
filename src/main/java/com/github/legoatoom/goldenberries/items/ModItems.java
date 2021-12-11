@@ -34,7 +34,7 @@ import net.minecraft.util.registry.Registry;
 public class ModItems {
 
 
-    public static final Item GOLDEN_BERRIES;
+    public static Item GOLDEN_BERRIES;
 
     private static Item register(String id, Item item){
         return register(new Identifier(GoldenBerries.MOD_ID,id), item);
@@ -47,9 +47,7 @@ public class ModItems {
         return Registry.register(Registry.ITEM, id, item);
     }
 
-    static {
+    public static void init(){
         GOLDEN_BERRIES = register("golden_berries", new AliasedBlockItem(ModBlocks.GOLDEN_BERRY_BUSH, new FabricItemSettings().food(ModFoodComponents.GOLDEN_BERRIES).group(ItemGroup.BREWING)));
     }
-
-    public static void init(){}
 }

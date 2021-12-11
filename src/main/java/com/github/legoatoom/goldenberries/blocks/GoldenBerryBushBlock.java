@@ -39,10 +39,16 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
+/**
+ * The same as a normal SweetBerryBushBlock only that I had to overwrite some methods that dropped sweet_berries.
+ *
+ * @author legoatoom
+ */
 public class GoldenBerryBushBlock extends SweetBerryBushBlock {
 
     public GoldenBerryBushBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(this.stateManager.getDefaultState().with(AGE, 0));
     }
 
     @Override
@@ -51,16 +57,9 @@ public class GoldenBerryBushBlock extends SweetBerryBushBlock {
     }
 
     @Override
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        int i = state.get(AGE);
-        if (i < 3 && random.nextInt(6) == 0) {
-            world.setBlockState(pos, state.with(AGE, i + 1), Block.NOTIFY_LISTENERS);
-        }
-    }
-
-    @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(BlockTags.SAND) || floor.isOf(Blocks.NETHERRACK) || floor.isIn(BlockTags.NYLIUM) || floor.isOf(Blocks.SOUL_SOIL) || super.canPlantOnTop(floor, world, pos);
+        return floor.isIn(BlockTags.SAND) || floor.isOf(Blocks.NETHERRACK)
+                || floor.isIn(BlockTags.NYLIUM) || floor.isOf(Blocks.SOUL_SOIL) || super.canPlantOnTop(floor, world, pos);
     }
 
     @Override
