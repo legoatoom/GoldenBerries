@@ -31,13 +31,13 @@ import net.minecraft.util.registry.Registry;
 @SuppressWarnings("SameParameterValue")
 public class ModStatusEffects {
 
-    public static StatusEffect POISON_RESISTANCE;
+    public static StatusEffect POISON_RESISTANCE = new PoisonResistanceStatusEffect();
 
-    private static StatusEffect register(String id, StatusEffect entry){
-        return Registry.register(Registry.STATUS_EFFECT, new Identifier(GoldenBerries.MOD_ID, id), entry);
+    private static void register(String id, StatusEffect entry){
+        Registry.register(Registry.STATUS_EFFECT, new Identifier(GoldenBerries.MOD_ID, id), entry);
     }
 
     public static void init(){
-        POISON_RESISTANCE = register("poison_resistance", new PoisonResistanceStatusEffect());
+         register("poison_resistance", POISON_RESISTANCE);
     }
 }
