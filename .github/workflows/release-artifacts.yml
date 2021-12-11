@@ -56,9 +56,9 @@ jobs:
 
           name: "Golden Berries ${{ github.event.input.version }} for Minecraft ${{ github.event.input.mcVersion }}"
           version: "${{github.event.input.version}}+${{github.event.input.mcVersion}}"
-          versionType: ${{ github.event.inputs.versionType }}
+          version-type: ${{ github.event.inputs.versionType }}
           changelog-file: CHANGELOG.md
 
           loaders: fabric
-          gameVersions: ${{github.event.input.mcVersion}}
+          game-version: ${{github.event.input.mcVersion}}
           java: 17
