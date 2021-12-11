@@ -42,6 +42,12 @@ jobs:
         # You may pin to the exact commit or the version.   
         uses: Kir-Antipov/mc-publish@v1.1
         with:
+          modrinth-id: fWsKNtr3
+          modrinth-token: ${{ secrets.MODRINTH_API_KEY }}
+          
+          curseforge-id: 409372
+          curseforge-token: ${{ secrets.CURSEFORGE_API_KEY }}
+          
           github-token: ${{ secrets.GITHUB_TOKEN }}
           loaders: fabric
           java: 17
