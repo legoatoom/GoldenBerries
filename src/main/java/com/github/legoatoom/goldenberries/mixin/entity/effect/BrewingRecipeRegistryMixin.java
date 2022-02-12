@@ -17,6 +17,9 @@
 
 package com.github.legoatoom.goldenberries.mixin.entity.effect;
 
+import com.github.legoatoom.goldenberries.blocks.ModBlocks;
+import com.github.legoatoom.goldenberries.entity.effect.ModStatusEffects;
+import com.github.legoatoom.goldenberries.items.ModFoodComponents;
 import com.github.legoatoom.goldenberries.items.ModItems;
 import com.github.legoatoom.goldenberries.potion.ModPotions;
 import net.minecraft.entity.effect.StatusEffect;
@@ -49,6 +52,8 @@ public class BrewingRecipeRegistryMixin {
             method = "registerDefaults()V",
             at = @At("TAIL"))
     private static void registerDefaults(CallbackInfo ci){
+//        ModItems.init(); // Needs to otherwise it crashes :(
+//        ModPotions.init();
         registerPotionRecipe(Potions.AWKWARD, ModItems.GOLDEN_BERRIES, ModPotions.ALEXITERIC);
         registerPotionRecipe(ModPotions.ALEXITERIC, Items.REDSTONE, ModPotions.LONG_ALEXITERIC);
     }

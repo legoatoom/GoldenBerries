@@ -32,13 +32,13 @@ import net.minecraft.util.registry.Registry;
 @SuppressWarnings("SameParameterValue")
 public class ModBlocks {
 
-    public static Block GOLDEN_BERRY_BUSH;
+    public static Block GOLDEN_BERRY_BUSH = new GoldenBerryBushBlock(FabricBlockSettings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH));
 
-    private static Block register(String id, Block block) {
-        return Registry.register(Registry.BLOCK, new Identifier(GoldenBerries.MOD_ID, id), block);
+    private static void register(String id, Block block) {
+        Registry.register(Registry.BLOCK, new Identifier(GoldenBerries.MOD_ID, id), block);
     }
 
     public static void init(){
-        GOLDEN_BERRY_BUSH = register("golden_berry_bush", new GoldenBerryBushBlock(FabricBlockSettings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+        register("golden_berry_bush", GOLDEN_BERRY_BUSH);
     }
 }

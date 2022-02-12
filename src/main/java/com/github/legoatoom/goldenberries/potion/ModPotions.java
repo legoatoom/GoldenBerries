@@ -29,15 +29,15 @@ import net.minecraft.util.registry.Registry;
  * @author legoatoom
  */
 public class ModPotions {
-    public static Potion ALEXITERIC;
-    public static Potion LONG_ALEXITERIC;
+    public static Potion ALEXITERIC = new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 3600));
+    public static Potion LONG_ALEXITERIC = new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 9600));
 
-    private static Potion register(String name, Potion potion) {
-        return Registry.register(Registry.POTION, name, potion);
+    private static void register(String name, Potion potion) {
+        Registry.register(Registry.POTION, name, potion);
     }
 
     public static void init(){
-        ALEXITERIC = register("alexiteric", new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 3600)));
-        LONG_ALEXITERIC = register("long_alexiteric", new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 9600)));
+         register("alexiteric", ALEXITERIC);
+         register("long_alexiteric",LONG_ALEXITERIC );
     }
 }
