@@ -32,30 +32,40 @@
  * along with GoldenBerries.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.legoatoom.goldenberries.blocks;
+package com.github.legoatoom.goldenberries.common;
 
-import com.github.legoatoom.goldenberries.GoldenBerries;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import com.github.legoatoom.goldenberries.common.registries.BlockRegistry;
+import com.github.legoatoom.goldenberries.common.registries.ItemRegistry;
+import com.github.legoatoom.goldenberries.common.util.Init;
+import com.google.common.base.Suppliers;
+import dev.architectury.registry.registries.Registries;
+import org.reflections.Reflections;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-/**
- * The modded version of the {@link net.minecraft.block.Blocks} class containing all the blocks added by this mod.
- *
- * @author legoatoom
- */
-@SuppressWarnings("SameParameterValue")
-public class ModBlocks {
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Set;
+import java.util.function.Supplier;
 
-    public static Block GOLDEN_BERRY_BUSH = new GoldenBerryBushBlock(FabricBlockSettings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH));
+import static org.reflections.scanners.Scanners.SubTypes;
+import static org.reflections.scanners.Scanners.TypesAnnotated;
 
-    private static void register(String id, Block block) {
-        Registry.register(Registry.BLOCK, new Identifier(GoldenBerries.MOD_ID, id), block);
+public class GoldenBerries {
+
+    /**
+     * A static final string of the MOD_ID, so I don't have to write it each time and create the possibility of a typo.
+     */
+    public static final String MOD_ID = "goldenberries";
+
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final Reflections reflections = new Reflections("com.github.legoatoom.goldenberries");
+
+    public static final Supplier<Registries> REGISTRIES = Suppliers.memoize(() -> Registries.get(MOD_ID));
+
+
+    public static void init() {
+        BlockRegistry.init();
+        ItemRegistry.init();
     }
-
-    public static void init(){
-        register("golden_berry_bush", GOLDEN_BERRY_BUSH);
-    }
-
 }

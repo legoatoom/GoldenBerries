@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/sweet_berry_bush_stage0",
+  "textures": {
+    "cross": "goldenberries:block/golden_berry_bush_stage0"
+  }
+}

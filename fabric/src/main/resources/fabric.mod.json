@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "goldenberries",
+  "version": "${version}",
+  "name": "Golden Berries",
+  "description": "Adds golden berries to the game.",
+  "authors": [
+    "legoatoom"
+  ],
+  "contact": {
+    "homepage": "https://github.com/legoatoom/GoldenBerries",
+    "sources": "https://github.com/legoatoom/GoldenBerries"
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/goldenberries/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.github.legoatoom.goldenberries.fabric.GoldenBerriesFabric"
+    ],
+    "client": [
+      "com.github.legoatoom.goldenberries.fabric.client.ClientInitializer"
+    ]
+  },
+  "accessWidener": "goldenberries.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.13.1",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}

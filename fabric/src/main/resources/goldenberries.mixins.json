@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.github.legoatoom.goldenberries.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "entity.effect.BrewingRecipeRegistryMixin",
+    "entity.effect.StatusEffectMixin"
+  ],
+  "client": [
+    "client.gui.hud.InGameHudMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1,
+    "maxShiftBy": 3
+  }
+}
