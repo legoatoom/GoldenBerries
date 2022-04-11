@@ -17,9 +17,6 @@
 
 package com.github.legoatoom.goldenberries.mixin.entity.effect;
 
-import com.github.legoatoom.goldenberries.blocks.ModBlocks;
-import com.github.legoatoom.goldenberries.entity.effect.ModStatusEffects;
-import com.github.legoatoom.goldenberries.items.ModFoodComponents;
 import com.github.legoatoom.goldenberries.items.ModItems;
 import com.github.legoatoom.goldenberries.potion.ModPotions;
 import net.minecraft.entity.effect.StatusEffect;

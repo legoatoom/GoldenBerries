@@ -36,20 +36,12 @@ package com.github.legoatoom.goldenberries.common;
 
 import com.github.legoatoom.goldenberries.common.registries.BlockRegistry;
 import com.github.legoatoom.goldenberries.common.registries.ItemRegistry;
-import com.github.legoatoom.goldenberries.common.util.Init;
 import com.google.common.base.Suppliers;
 import dev.architectury.registry.registries.Registries;
-import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Set;
 import java.util.function.Supplier;
-
-import static org.reflections.scanners.Scanners.SubTypes;
-import static org.reflections.scanners.Scanners.TypesAnnotated;
 
 public class GoldenBerries {
 
@@ -59,7 +51,6 @@ public class GoldenBerries {
     public static final String MOD_ID = "goldenberries";
 
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    public static final Reflections reflections = new Reflections("com.github.legoatoom.goldenberries");
 
     public static final Supplier<Registries> REGISTRIES = Suppliers.memoize(() -> Registries.get(MOD_ID));
 

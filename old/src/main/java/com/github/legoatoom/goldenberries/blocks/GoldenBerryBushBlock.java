@@ -37,8 +37,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-import java.util.Random;
-
 /**
  * The same as a normal SweetBerryBushBlock only that I had to overwrite some methods that dropped sweet_berries.
  *

@@ -20,7 +20,6 @@ package com.github.legoatoom.goldenberries.common.registries;
 import com.github.legoatoom.goldenberries.common.GoldenBerries;
 import com.github.legoatoom.goldenberries.common.items.ModFoodComponents;
 import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -32,15 +31,14 @@ public class ItemRegistry {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, Registry.ITEM_KEY);
 
-//    public static Item GOLDEN_BERRIES = new AliasedBlockItem(ModBlocks.GOLDEN_BERRY_BUSH, new FabricItemSettings().food(ModFoodComponents.GOLDEN_BERRIES).group(ItemGroup.BREWING));
-    public static RegistrySupplier<Item> GOLDEN_BERRIES = ITEMS.register("golden_berries", () ->
-        new AliasedBlockItem(BlockRegistry.GOLDEN_BERRY_BUSH.get(), new Item.Settings()
-                .food(ModFoodComponents.GOLDEN_BERRIES)
-                .group(ItemGroup.FOOD)
-        ));
+    public static Item GOLDEN_BERRIES = ITEMS.register("golden_berries", () ->
+            new AliasedBlockItem(BlockRegistry.GOLDEN_BERRY_BUSH.get(), new Item.Settings()
+                    .food(ModFoodComponents.GOLDEN_BERRIES)
+                    .group(ItemGroup.FOOD)
+            )).get();
 
 
-    public static void init(){
+    public static void init() {
         GoldenBerries.LOGGER.debug("Registering Items");
         ITEMS.register();
     }
