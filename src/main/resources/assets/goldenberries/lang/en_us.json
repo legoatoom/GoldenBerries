@@ -5,10 +5,6 @@
   "item.minecraft.potion.effect.alexiteric": "Potion of Alexiteric",
   "item.minecraft.splash_potion.effect.alexiteric": "Splash Potion of Alexiteric",
   "item.minecraft.lingering_potion.effect.alexiteric": "Lingering Potion of Alexiteric",
-  "item.minecraft.potion.effect.long_alexiteric": "Potion of Alexiteric",
-  "item.minecraft.splash_potion.effect.long_alexiteric": "Splash Potion of Alexiteric",
-  "item.minecraft.lingering_potion.effect.long_alexiteric": "Lingering Potion of Alexiteric",
-
   "item.minecraft.tipped_arrow.effect.alexiteric": "Arrow of Alexiteric",
   "effect.goldenberries.poison_resistance": "Alexiteric"
 }

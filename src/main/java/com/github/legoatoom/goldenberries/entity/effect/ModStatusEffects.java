@@ -24,8 +24,9 @@ import net.minecraft.util.registry.Registry;
 
 /**
  * ModStatusEffects is the Modded version of the {@link net.minecraft.entity.effect.StatusEffects} class.
- *
+ * <p>
  * Containing all the status effects this mod has.
+ *
  * @author legoatoom
  */
 @SuppressWarnings("SameParameterValue")
@@ -33,11 +34,11 @@ public class ModStatusEffects {
 
     public static StatusEffect POISON_RESISTANCE = new PoisonResistanceStatusEffect();
 
-    private static void register(String id, StatusEffect entry){
+    private static void register(String id, StatusEffect entry) {
         Registry.register(Registry.STATUS_EFFECT, new Identifier(GoldenBerries.MOD_ID, id), entry);
     }
 
-    public static void init(){
-         register("poison_resistance", POISON_RESISTANCE);
+    public static void init() {
+        register("poison_resistance", POISON_RESISTANCE);
     }
 }

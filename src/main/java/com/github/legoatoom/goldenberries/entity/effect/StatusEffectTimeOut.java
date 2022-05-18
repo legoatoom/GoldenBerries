@@ -17,19 +17,11 @@
 
 package com.github.legoatoom.goldenberries.entity.effect;
 
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectCategory;
+public interface StatusEffectTimeOut {
+    int getTimeOut();
 
-/**
- * The status effect resulted from the {@link com.github.legoatoom.goldenberries.potion.ModPotions#ALEXITERIC} potion.
- * This gives the settings of the potion and the colour.
- *
- * @author legoatoom
- */
-public class PoisonResistanceStatusEffect extends StatusEffect {
+    void setTimeout(int val);
 
-    public PoisonResistanceStatusEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0x0FD2FC);
-    }
+    void reduceTimeOut();
 
 }

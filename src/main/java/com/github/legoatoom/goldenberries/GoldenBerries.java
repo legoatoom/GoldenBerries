@@ -23,14 +23,13 @@ import com.github.legoatoom.goldenberries.items.ModFoodComponents;
 import com.github.legoatoom.goldenberries.items.ModItems;
 import com.github.legoatoom.goldenberries.potion.ModPotions;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.util.registry.Registry;
 
 /**
  * <h3>GoldenBerries implements {@link ModInitializer}</h3>
  *
  * <p>You may notice that the entry point for the mod is empty, this is because all registering of the Mod is done
  * via static classes, therefor this class only contains the a public static string for the <i>MOD_ID</i>.
- *
+ * <p>
  * The MOD_ID is used by fabric to differentiate between mods.</p>
  *
  * @author legoatoom

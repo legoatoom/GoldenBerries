@@ -17,13 +17,8 @@
 
 package com.github.legoatoom.goldenberries.mixin.entity.effect;
 
-import com.github.legoatoom.goldenberries.blocks.ModBlocks;
-import com.github.legoatoom.goldenberries.entity.effect.ModStatusEffects;
-import com.github.legoatoom.goldenberries.items.ModFoodComponents;
 import com.github.legoatoom.goldenberries.items.ModItems;
 import com.github.legoatoom.goldenberries.potion.ModPotions;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
@@ -36,9 +31,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * The mixin for the {@link BrewingRecipeRegistry}.
- * Because Minecraft's potion registry and recipes are not yet data based via .json files, as normal crafting recipes are,
- * this class has to register my recipes directly as a mixin during the registration of the other 'vanilla' recipes.
+ * The mixin for the {@link BrewingRecipeRegistry}. Because Minecraft's potion registry and recipes are not yet data
+ * based via .json files, as normal crafting recipes are, this class has to register my recipes directly as a mixin
+ * during the registration of the other 'vanilla' recipes.
  *
  * @author legoatoom
  */
@@ -46,15 +41,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class BrewingRecipeRegistryMixin {
 
 
-    @Shadow private static void registerPotionRecipe(Potion input, Item item, Potion output){}
+    @Shadow
+    private static void registerPotionRecipe(Potion input, Item item, Potion output) {
+    }
 
-    @Inject(
-            method = "registerDefaults()V",
-            at = @At("TAIL"))
-    private static void registerDefaults(CallbackInfo ci){
-//        ModItems.init(); // Needs to otherwise it crashes :(
-//        ModPotions.init();
+    @Inject(method = "registerDefaults()V", at = @At("TAIL"))
+    private static void registerDefaults(CallbackInfo ci) {
         registerPotionRecipe(Potions.AWKWARD, ModItems.GOLDEN_BERRIES, ModPotions.ALEXITERIC);
         registerPotionRecipe(ModPotions.ALEXITERIC, Items.REDSTONE, ModPotions.LONG_ALEXITERIC);
+        registerPotionRecipe(ModPotions.ALEXITERIC, Items.GLOWSTONE_DUST, ModPotions.STRONG_ALEXITERIC);
     }
 }

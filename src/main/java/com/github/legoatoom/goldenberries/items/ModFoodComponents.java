@@ -20,12 +20,15 @@ package com.github.legoatoom.goldenberries.items;
 import net.minecraft.item.FoodComponent;
 
 /**
- * The modded version of the {@link net.minecraft.item.FoodComponents} class containing all the food components added
- * by this mod.
+ * The modded version of the {@link net.minecraft.item.FoodComponents} class containing all the food components added by
+ * this mod.
+ *
  * @author legoatoom
  */
 public class ModFoodComponents {
-    public static FoodComponent GOLDEN_BERRIES = (new FoodComponent.Builder()).hunger(3).saturationModifier(0.6F).build();
+    public static FoodComponent GOLDEN_BERRIES = (new FoodComponent.Builder()).hunger(3)
+                                                                              .saturationModifier(0.6F)
+                                                                              .build();
 
     public static void init() {
     }

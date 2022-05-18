@@ -27,8 +27,8 @@ import net.minecraft.client.render.RenderLayer;
 @Environment(EnvType.CLIENT)
 public class ClientInitializer implements ClientModInitializer {
     /**
-     * The Golden Berry Bush is not a block with a full texture, it has transparency.
-     * The game does not assume this, so we have to specify it here in the client.
+     * The Golden Berry Bush is not a block with a full texture, it has transparency. The game does not assume this, so
+     * we have to specify it here in the client.
      */
     @Override
     public void onInitializeClient() {

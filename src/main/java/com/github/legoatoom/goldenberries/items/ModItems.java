@@ -20,8 +20,10 @@ package com.github.legoatoom.goldenberries.items;
 import com.github.legoatoom.goldenberries.GoldenBerries;
 import com.github.legoatoom.goldenberries.blocks.ModBlocks;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.*;
+import net.minecraft.item.AliasedBlockItem;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -34,20 +36,21 @@ import net.minecraft.util.registry.Registry;
 public class ModItems {
 
 
-    public static Item GOLDEN_BERRIES = new AliasedBlockItem(ModBlocks.GOLDEN_BERRY_BUSH, new FabricItemSettings().food(ModFoodComponents.GOLDEN_BERRIES).group(ItemGroup.BREWING));
+    public static Item GOLDEN_BERRIES = new AliasedBlockItem(ModBlocks.GOLDEN_BERRY_BUSH, new FabricItemSettings().food(ModFoodComponents.GOLDEN_BERRIES)
+                                                                                                                  .group(ItemGroup.BREWING));
 
-    private static Item register(String id, Item item){
-        return register(new Identifier(GoldenBerries.MOD_ID,id), item);
+    private static Item register(String id, Item item) {
+        return register(new Identifier(GoldenBerries.MOD_ID, id), item);
     }
 
-    private static Item register(Identifier id, Item item){
-        if (item instanceof BlockItem){
+    private static Item register(Identifier id, Item item) {
+        if (item instanceof BlockItem) {
             ((BlockItem) item).appendBlocks(Item.BLOCK_ITEMS, item);
         }
         return Registry.register(Registry.ITEM, id, item);
     }
 
-    public static void init(){
+    public static void init() {
         GOLDEN_BERRIES = register("golden_berries", GOLDEN_BERRIES);
     }
 }

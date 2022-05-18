@@ -24,20 +24,23 @@ import net.minecraft.util.registry.Registry;
 
 /**
  * ModPotions is the Modded version of the {@link net.minecraft.potion.Potions} class.
- *
+ * <p>
  * Containing all the potions that this mod adds.
+ *
  * @author legoatoom
  */
 public class ModPotions {
-    public static Potion ALEXITERIC = new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 3600));
-    public static Potion LONG_ALEXITERIC = new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 9600));
+    public static Potion ALEXITERIC        = new Potion(new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 3600));
+    public static Potion LONG_ALEXITERIC   = new Potion("alexiteric", new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 9600));
+    public static Potion STRONG_ALEXITERIC = new Potion("alexiteric", new StatusEffectInstance(ModStatusEffects.POISON_RESISTANCE, 1800, 1));
 
     private static void register(String name, Potion potion) {
         Registry.register(Registry.POTION, name, potion);
     }
 
-    public static void init(){
-         register("alexiteric", ALEXITERIC);
-         register("long_alexiteric",LONG_ALEXITERIC );
+    public static void init() {
+        register("alexiteric", ALEXITERIC);
+        register("long_alexiteric", LONG_ALEXITERIC);
+        register("strong_alexiteric", STRONG_ALEXITERIC);
     }
 }
